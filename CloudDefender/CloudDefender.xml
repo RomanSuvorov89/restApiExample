@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CloudDefender</name>
+    </assembly>
+    <members>
+        <member name="M:CloudDefender.Controllers.AuthController.Register(CloudDefender.Models.Requests.RegisterRequest)">
+            <summary>
+            Метод для регистрации пользователя.
+            </summary>
+            <param name="registerRequest">Объект с параметрами для регистрации пользователя</param>
+            <response code="201">Возвращает идентификатор пользователя</response>
+            <response code="400">Запрос составлен неверно</response>
+            <response code="500">Произошла ошибка, обратитесь к администратору!</response>
+        </member>
+        <member name="M:CloudDefender.Controllers.AuthController.WhoAmI(System.Guid)">
+            <summary>
+            Проверяет наличие пользователя в базе, возвращает ник найденного пользователя
+            </summary>
+            <param name="userId">Идентификатор пользователя</param>
+            <response code="200">Возвращает ник пользователя</response>
+            <response code="400">Запрос составлен неверно</response>
+            <response code="500">Произошла ошибка, обратитесь к администратору!</response>
+        </member>
+        <member name="M:CloudDefender.Controllers.FileController.GetFile(System.Guid)">
+            <summary>
+            Скачивает файл
+            </summary>
+            <param name="fileId">Идентификатор файла</param>
+            <response code="200">Файл в бинарном формате</response>
+            <response code="400">Запрос составлен неверно</response>
+            <response code="500">Произошла ошибка, обратитесь к администратору!</response>
+        </member>
+        <member name="M:CloudDefender.Controllers.FileController.DeleteFile(System.Guid)">
+            <summary>
+            Удаляет фаил из локального хранилища
+            </summary>
+            <param name="fileId">Идентификатор файла</param>
+            <response code="204">Операции произведены успешно</response>
+            <response code="400">Запрос составлен неверно</response>
+            <response code="500">Произошла ошибка, обратитесь к администратору!</response>
+        </member>
+        <member name="M:CloudDefender.Controllers.FileController.CreateFile(CloudDefender.Models.Requests.InsertFileRequest)">
+            <summary>
+            Загружает файл в облако
+            </summary>
+            <param name="request">Объект с параметрами для загрузки файла</param>
+            <response code="201">Возвращает идентификатор файла</response>
+            <response code="400">Запрос составлен неверно</response>
+            <response code="500">Произошла ошибка, обратитесь к администратору!</response>
+        </member>
+        <member name="M:CloudDefender.Controllers.FileController.UpdateFile(CloudDefender.Models.Requests.UpdateFileRequest)">
+            <summary>
+            Метод для обновления файла.
+            </summary>
+            <param name="request">Объект с параметрами для обновления файла</param>
+            <response code="204">Операция выполнена успешно</response>
+            <response code="400">Запрос составлен неверно</response>
+            <response code="500">Произошла ошибка, обратитесь к администратору!</response>
+        </member>
+        <member name="M:CloudDefender.Controllers.FolderController.GetFolder(System.Guid)">
+            <summary>
+            Выгружает информацию о папке
+            </summary>
+            <param name="folderId">Идентификатор папки</param>
+            <response code="200">Объект с данными папки</response>
+            <response code="400">Запрос составлен неверно</response>
+            <response code="500">Произошла ошибка, обратитесь к администратору!</response>
+        </member>
+        <member name="M:CloudDefender.Controllers.FolderController.CreateFolder(CloudDefender.Models.Requests.CreateFolderRequest)">
+            <summary>
+            Создаёт папку, привязывая её к пользователю
+            </summary>
+            <param name="request">Объект с параметрами для создания папки</param>
+            <response code="201">Возвращает идентификатор папки</response>
+            <response code="400">Запрос составлен неверно</response>
+            <response code="500">Произошла ошибка, обратитесь к администратору!</response>
+        </member>
+        <member name="M:CloudDefender.Controllers.FolderController.ShareFolder(CloudDefender.Models.Requests.ShareFolderRequest)">
+            <summary>
+            Расшаривает папку другому пользователю
+            </summary>
+            <param name="request">Объект с параметрами для шары папки</param>
+            <response code="204">Операция выполнена успешно</response>
+            <response code="400">Запрос составлен неверно</response>
+            <response code="500">Произошла ошибка, обратитесь к администратору!</response>
+        </member>
+        <member name="M:CloudDefender.Controllers.FolderController.DeleteFolder(System.Guid)">
+            <summary>
+            Удаляет папку и все вложенные файлы
+            </summary>
+            <param name="folderId">Идентификатор папки</param>
+            <response code="204">Операция выполнена успешно</response>
+            <response code="400">Запрос составлен неверно</response>
+            <response code="500">Произошла ошибка, обратитесь к администратору!</response>
+        </member>
+        <member name="P:CloudDefender.Models.Requests.ShareFolderRequest.AccessLevel">
+            <summary>
+            По умолчанию Read\Update
+            </summary>
+        </member>
+    </members>
+</doc>
